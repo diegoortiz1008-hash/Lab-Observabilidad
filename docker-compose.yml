@@ -35,6 +35,7 @@ services:
     container_name: arsw-promtail
     volumes:
       - ./promtail/promtail-config.yml:/etc/promtail/config.yml
+      - ./logs:/var/log/app
     command: -config.file=/etc/promtail/config.yml
     depends_on:
       - loki
